@@ -1,0 +1,31 @@
+<button
+  type="{{ params.type | d('submit') }}"
+  {% if params.name %}name="{{ params.name }}"{% endif %}
+  {% if params.value %}value="{{ params.value }}"{% endif %}
+  class="pharmacy-card-i{%- if params.classes %} {{ params.classes }}{% endif %}"
+  {{- nhsukAttributes(params.attributes) }}>
+  <div class="pharmacy-details-i{%- if params.detailsClasses %} {{ params.detailsClasses }}{% endif %}">
+    {% if params.heading %}
+      <h2 class="nhsuk-card__heading nhsuk-heading-s">
+        {{ params.heading }}
+      </h2>
+    {% endif %}
+
+    {% if caller %}
+      {{ caller() }}
+    {% elif params.text %}
+      <p>{{ params.text }}</p>
+    {% else %}
+      {{ params.html | d(params.HTML) | safe }}
+    {% endif %}
+  </div>
+
+  <div class="select-panel-i{%- if params.selectPanelClasses %} {{ params.selectPanelClasses }}{% endif %}">
+    <div class="app-button--link app-option-list__button">
+      <p>{{ params.selectText | d('Choose this pharmacy') }}</p>
+    </div>
+    <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="34" width="34" fill="#4c6272">
+      <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+    </svg>
+  </div>
+</button>
