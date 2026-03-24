@@ -8,14 +8,17 @@
     items: [
       {
         'text': 'Homepage - Version 1',
+        'description': "A 'hero' banner promoting the new AI/LLM feature",
         'href': '/homepage/version-1'
       },
       {
         'text': 'Homepage - Version 2',
+        'description': "Alternate version of the 'hero'",
         'href': '/homepage/version-2'
       },
       {
         'text': 'Homepage - Version 3',
+        'description': "A change to the page layout 'tiles' and addtion of quick and basic call to action for AI feature",
         'href': '/homepage/version-3'
       }
     ]
@@ -30,17 +33,31 @@
     {{ page.title }}
   </h1>
 
-  <p>Thank you for your time today</p>
+  {% call details({
+  summaryText: "About this prototype"
+  }) %}
+    <p>We are investigating the potential for AI and Large Language Model technology to improve digital user navigation to the most appropriate service for their need.</p>
+    <p>By better capturing the user's intent (what they are trying to do) we think we can provide users with a simpler, faster and more accessible experience of 111 online.</p>
+  {% endcall %}
 
-  {% for item in page.links.items %}
+    <hr class="app-section-break">
+
+    <h2 class="nhsuk-heading-m">Design history</h2>
+    {% for item in page.links.items %}
     {% if loop.first %}
-      <ul class="nhsuk-list">
+    <ul class="nhsuk-list">
+      {% endif %}
+      <li>
+        <p>
+          <a href="{{ item.href }}">{{ item.text }}</a><br>
+          <span class="nhsuk-hint nhsuk-u-margin-top-0">{{ item.description }}</span>
+        </p>
+      </li>
+      {% if loop.last %}
+    </ul>
     {% endif %}
-        <li><a href="{{ item.href }}">{{ item.text }}</a></li>
-    {% if loop.last %}
-      </ul>
-    {% endif %}
-  {% endfor %}
+    {% endfor %}
+
 {% endblock %}
 
 {% block footer %}
