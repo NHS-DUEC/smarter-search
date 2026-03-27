@@ -404,3 +404,10 @@
     min-width: 40px
   }
 }
+
+.app-u-reading-width {
+  max-width: 100%;
+  @include nhsuk-media-query($from: tablet) {
+    max-width: 38rem;
+  }
+}

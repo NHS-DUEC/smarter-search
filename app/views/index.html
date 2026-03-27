@@ -7,24 +7,29 @@
     title: 'Prototype quick links',
     items: [
       {
-        'text': 'Homepage - Version 1',
+        'text': 'Homepage design experiment &ndash; 1',
         'description': "A 'hero' banner promoting the new AI/LLM feature",
         'href': '/homepage/version-1'
       },
       {
-        'text': 'Homepage - Version 2',
+        'text': 'Homepage design experiment &ndash; 2',
         'description': "Alternate version of the 'hero'",
         'href': '/homepage/version-2'
       },
       {
-        'text': 'Homepage - Version 3',
+        'text': 'Homepage design experiment &ndash; 3',
         'description': "A change to the page layout 'tiles' and addtion of quick and basic call to action for AI get help for your symptoms",
         'href': '/homepage/version-3'
       },
       {
-        'text': 'Homepage - Version 4',
+        'text': 'Homepage design experiment &ndash; 4',
         'description': "A redesigned call to action for AI get help for your symptoms",
         'href': '/homepage/version-4'
+      },
+      {
+        'text': 'Journey &ndash; Version 1',
+        'description': "Version 1 of an AI Navigation journey - In this prototype we wanted to learn about user's response to the option of using an AI tool to tell us what they",
+        'href': '/version-1'
       }
     ]
   }
@@ -54,7 +59,7 @@
       {% endif %}
       <li>
         <p>
-          <a href="{{ item.href }}">{{ item.text }}</a><br>
+          <a href="{{ item.href }}">{{ item.text | safe }}</a><br>
           <span class="nhsuk-hint nhsuk-u-margin-top-0">{{ item.description }}</span>
         </p>
       </li>
