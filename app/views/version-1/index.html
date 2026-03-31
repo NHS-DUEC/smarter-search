@@ -64,35 +64,10 @@
 
 {% block content_primary %}
 
-  <h2 class="nhsuk-heading-l">I want to get:</h2>
-
-  {% set appSignage %}
-    {% for link in page.entrylinks %}
-      {% if loop.first %}
-      <ul class="app-signage">
-      {% endif %}
-        <li class="app-signage__item">
-          <a class="app-signage__link" href="{{ link.url | default('#') }}">
-            {{ link.text }}
-            <svg class="app-signage__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-              <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-            </svg>
-          </a>
-        </li>
-      {% if loop.last %}
-      </ul>
-      {% endif %}
-    {% endfor %}
-  {% endset %}
-
-  {{ appSignage | safe }}
-
-  <hr class="nhsuk-section-break nhsuk-section-break--visible nhsuk-u-margin-bottom-4">
-
   <div class="nhsuk-card nhsuk-card--primary nhsuk-u-margin-bottom-4">
     <div class="nhsuk-card__content">
       <h2 class="nhsuk-card__heading nhsuk-heading-m">
-        Try NHS AI to get help for your symptoms
+        Try NHS AI to tell us how we can help you today
       </h2>
       <p class="nhsuk-card__description">This is an experimental artificial intelligence (AI) tool.</p>
 
@@ -135,6 +110,29 @@
 
     </div>
   </div>
+
+  <h2 class="nhsuk-heading-l">I want to get:</h2>
+
+  {% set appSignage %}
+    {% for link in page.entrylinks %}
+      {% if loop.first %}
+      <ul class="app-signage">
+      {% endif %}
+        <li class="app-signage__item">
+          <a class="app-signage__link" href="{{ link.url | default('#') }}">
+            {{ link.text }}
+            <svg class="app-signage__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+              <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+            </svg>
+          </a>
+        </li>
+      {% if loop.last %}
+      </ul>
+      {% endif %}
+    {% endfor %}
+  {% endset %}
+
+  {{ appSignage | safe }}
 
   <hr class="nhsuk-section-break nhsuk-section-break--visible nhsuk-u-margin-bottom-4">
 
