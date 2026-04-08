@@ -28,13 +28,15 @@
       <span data-test-id="heading-text">Tell us how we can help</span>
     </h1>
 
+    <p class="nhsuk-lede-text nhsuk-u-margin-bottom-3">Briefly describe your main symptom or problem</p>
+
     {{ textarea({
       name: "exampleRightSize",
       id: "example-right-size",
       rows: "3",
       label: {
         text: "Briefly describe your main symptom or problem",
-        classes: 'nhsuk-label--m nhsuk-u-margin-bottom-3'
+        classes: 'nhsuk-u-visually-hidden'
       },
       hint: {
         html: "For example: “I have a cough and high temperature” or “I need an ankle x-ray”"
