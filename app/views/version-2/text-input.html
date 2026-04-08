@@ -14,6 +14,12 @@
         border-left: 0;
         padding-left: 0;
       }
+
+      .app-ai-separator {
+        width: 100%;
+        margin: 28px 0 0;
+        border-bottom: 1px solid #d8dde0;
+      }
     </style>
 
     <a class="nhsuk-back-link nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4" href="./index">Back</a>
@@ -44,12 +50,13 @@
         <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">How this AI tool works</h3>
         <p class="nhsuk-u-margin-bottom-2">It makes suggestions based on what you tell it. It can sometimes get things wrong. You can give us feedback if it does so we can improve it.</p>
         <p class="nhsuk-u-margin-bottom-0"><a href="./index">I do not want to use the AI tool</a></p>
+        <div class="app-ai-separator" aria-hidden="true"></div>
       </div>
     {% endcall %}
 
     <div class="nhsuk-u-margin-top-4">
       {% call details({
-        summaryText: "How the AI tool works"
+        summaryText: "More on how the AI tool works"
       }) %}
         <p>The AI will:</p>
         <ul>
